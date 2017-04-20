@@ -28,6 +28,7 @@
   },
   "scripts": {
     "build": "babel src --out-dir lib --copy-files --ignore defs",
+    "postinstall": "babel src --out-dir lib --copy-files --ignore defs",
     "test": "mocha --ui tdd --compilers js:babel-register"
   }
 }
