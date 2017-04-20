@@ -21,6 +21,9 @@ export default function Cloud(app: App, name: string, data: any = {}): Promise<a
     {}
   ).then(({response}) => {
     const decoded: CloudResponse = (decode(response): any);
+    if(decoded && decoded.hasOwnProperty('response')){
+      return Promise.resolve(decoded.response.result);
+    }
     if (decoded && decoded.hasOwnProperty('result')) {
       return Promise.resolve(decoded.result);
     }
