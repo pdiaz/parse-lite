@@ -9,14 +9,7 @@
     "url": "https://github.com/andrewimm/parse-lite"
   },
   "dependencies": {
-    "ibeam": "^0.1.1"
-  },
-  "files": [
-    "lib",
-    "index.js",
-    "README.md"
-  ],
-  "devDependencies": {
+    "ibeam": "^0.1.1",
     "babel-cli": "^6.14.0",
     "babel-plugin-syntax-flow": "^6.3.13",
     "babel-plugin-transform-flow-strip-types": "^6.3.15",
@@ -25,6 +18,13 @@
     "babel-register": "^6.5.2",
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
+  },
+  "files": [
+    "lib",
+    "index.js",
+    "README.md"
+  ],
+  "devDependencies": {
   },
   "scripts": {
     "build": "babel src --out-dir lib --copy-files --ignore defs",
