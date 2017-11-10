@@ -13,6 +13,7 @@ import type {
 export default class App {
   _ApplicationId: string;
   _JavaScriptKey: ?string;
+  _ClientKey: ?string;
   _MasterKey: ?string;
   _bareClient: Client;
   client: Client;
@@ -30,6 +31,7 @@ export default class App {
     }
     this._ApplicationId = options.applicationId;
     this._JavaScriptKey = options.javaScriptKey;
+    this._ClientKey = options.clientKey;
     this._MasterKey = options.masterKey;
     this._bareClient = new Client(clientOpts);
     this.client = addResponsePostProcessor(
@@ -44,6 +46,9 @@ export default class App {
     };
     if (this._JavaScriptKey) {
       json._JavaScriptKey = this._JavaScriptKey;
+    }
+    if (this._ClientKey) {
+      json._ClientKey = this._ClientKey;
     }
     if (payload && typeof payload === 'object') {
       for (let key in payload) {
