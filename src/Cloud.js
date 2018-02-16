@@ -27,6 +27,9 @@ export default function Cloud(
     options
   ).then(({response}) => {
     const decoded: CloudResponse = (decode(response): any);
+    if(decoded && decoded.hasOwnProperty('response')){
+      return Promise.resolve(decoded.response.result);
+    }
     if (decoded && decoded.hasOwnProperty('result')) {
       return Promise.resolve(decoded.result);
     }
